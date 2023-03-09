@@ -111,6 +111,8 @@ private List<Member> searchData1(String username, Integer age){
     .fetch();
 }
 ```
+<br>
+<br>
 
 #### e.g. 2
 {: .fs-5 .fw-700 }
