@@ -1,7 +1,7 @@
 ---
 layout: default
 title: N+1 문제
-nav_order: 1
+nav_order: 2
 has_children: false
 parent: JPA
 permalink: /docs/jpa/n-plus-1

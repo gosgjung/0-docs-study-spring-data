@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 1 vs N 단방향
-nav_order: 1
+nav_order: 3
 has_children: false
 parent: JPA
 permalink: /docs/jpa/many-to-one-single
