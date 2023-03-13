@@ -36,7 +36,7 @@ permalink: /docs/jpa/many-to-one-mirrored
 예를 들어 Employee, Department 객체간의 관계를 보자. Department 입장에서는 여러 명의 Employee 가 존재한다. 따라서 Department 내에는 `List<Employee> employees` 라는 필드가 존재하게 된다. 그리고 이 employees 라는 리스트를 실제 조인이 수행되게끔 하려면 프로그래밍 적으로 별도의 장치가 필요한데, JPA 는 `@OneToMany` 라고 하는 별도의 어노테이션을 사용해서 조인관계를 지정해줄 수 있다.
 <br>
 
-이렇게 지정된 Department 클래스 내의 `@ManyToOne` 어노테이션에는 `mappedBy` 라는 속성이 있다. 그리고 상대편 테이블인 Employee 클래스에는 `Department dept;` 와 같이 정의해둔 Department 클래스에 대한 참조 점이 있다. Department 클래스 내의 `employees` 에는 상대편 객체인 `Employee` 객체 내의 `dept` 변수에 대해 조인을 수행하게 끔 `mappedBy = "dept"` 라고 지정해준다. 쉽게 이야기하면, 상대편 테이블의 변수명을 지정해주는 방식이다. 내부적으로는 리플렉션을 통해 주입하기 때문이다.
+이렇게 지정된 Department 클래스 내의 `@OneToMany` 어노테이션에는 `mappedBy` 라는 속성이 있다. 그리고 상대편 테이블인 Employee 클래스에는 `Department dept;` 와 같이 정의해둔 Department 클래스에 대한 참조 점이 있다. Department 클래스 내의 `employees` 에는 상대편 객체인 `Employee` 객체 내의 `dept` 변수에 대해 조인을 수행하게 끔 `mappedBy = "dept"` 라고 지정해준다. 쉽게 이야기하면, 상대편 테이블의 변수명을 지정해주는 방식이다. 내부적으로는 리플렉션을 통해 주입하기 때문이다.
 <br>
 <br>
 
