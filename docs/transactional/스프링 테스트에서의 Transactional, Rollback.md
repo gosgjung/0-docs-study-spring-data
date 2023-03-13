@@ -250,8 +250,11 @@ class SomethingTest{
 <br>
 
 `@Transactional` 어노테이션을 테스트에서 사용하면 애플리케이션 영역에서 @Transactional 을 사용할 때와는 다르게 동작한다.<br>
+
 테스트클래스/메서드에서 `@Transactional` 을 사용할 때 스프링은 그 테스트를 트랜잭션 범위에서 실행하고 테스트가 끝나면 **자동으로 트랜잭션을 rollback 한다.**<br>
+
 (애플리케이션 계층에서 @Transactional 은 @Transactional 이 적용된 메서드가 실행이 성공적으로 수행되면 커밋하게끔 동작한다.)<br>
+
 아래 그림은 @Transactional 이 적용된 테스트 케이스가 실행될때의 동작을 그림으로 나타낸 그림이다. 자세히 보면, 트랜잭션의 마지막에 꼭 rollback 을 수행하는 것을 볼 수 있다.<br>
 <br>
 
