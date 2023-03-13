@@ -288,6 +288,9 @@ class SomethingTest{
 #### @Rollback(value = false)
 {: .fs-5 .fw-700 }
 
+> 가끔 데이터베이스 테이블에 데이터가 잘 저장/수정 됐는지 육안으로 확인하려 할 때 드물게 @Commit, @Rollback 을 사용하기도 한다. 이런 코드를 작성한 후에는 해당 코드를 가급적이면 전체 테스트 범위에 포함되지 않도록 `@Disabled` 처리를 해주자.
+<br>
+
 @Transactional 을 테스트 클래스/메서드에 붙였더라도 `@Rollback(value = false)` 를 클래스/메서드에 붙이면 테스트 종료 후 롤백 대신 커밋이 호출된다. (rollback=false 로 줘서 **'롤백하지마!'** 라고 프로그램에게 이야기해주는 것)
 <br>
 
