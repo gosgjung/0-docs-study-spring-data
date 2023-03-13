@@ -147,7 +147,11 @@ h2를 애플리케이션에서 사용할 때와 테스트에서 사용할 때의
   - 트랜잭션 매니저 인스턴스를 이용해서 직접 commit, rollback 하는 로직을 작성하는 방식이다.
   - PlatformTransactionManager 를 의존성 주입으로 주입 받아서 이 트랜잭션 매니저로 @BeforeEach, @AfterEach 에서 commit, rollback 을 구현하면 된다.
 - @Transactional 사용
-먼저 직접 구현할 경우의 예제를 보자.<br>
+  - @Transactional 이 적용된 메서드의 수행이 완료되면 수행했던 테스트에 대한 DB 수정사항을 Rollback 하는 방식
+
+<br>
+
+테스트 후 롤백하는 로직을 직접 구현할 경우의 예제를 정리해보고, @Transactional 을  사용하도록 전환하면 어떻게 코드가 단순해지는지를 정리해보기로 했다.<br>
 <br>
 <br>
 
